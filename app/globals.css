@@ -62,111 +62,55 @@
 
 :root {
   color-scheme: dark;
-  --background: #030712;
-  --foreground: #F8FAFC;
-  --card: #071426;
-  --card-foreground: #F8FAFC;
-  --popover: #071426;
-  --popover-foreground: #F8FAFC;
-  --primary: #0EA5E9;
-  --primary-foreground: #030712;
-  --secondary: #071426;
-  --secondary-foreground: #F8FAFC;
-  --muted: #071426;
-  --muted-foreground: #94A3B8;
-  --accent: #22D3EE;
-  --accent-foreground: #030712;
-  --destructive: #22D3EE;
-  --border: #94A3B8;
-  --input: #94A3B8;
-  --ring: #22D3EE;
-  --chart-1: #0EA5E9;
-  --chart-2: #22D3EE;
-  --chart-3: #94A3B8;
-  --chart-4: #071426;
-  --chart-5: #030712;
+
+  /* Paleta da marca */
+  --brand-bg: #030712;         /* fundo geral do site (o "preto") */
+  --brand-surface: #071426;    /* fundo das seções alternadas (Sobre, Dúvidas) */
+  --brand-elevated: #0c1e38;   /* fundo dos cards (depoimentos, campos do formulário) */
+  --brand-text: #f8fafc;       /* cor do texto principal (branco) */
+  --brand-text-muted: #94a3b8; /* cor do texto secundário (cinza-azulado) */
+  --brand-accent: #0ea5e9;     /* azul de destaque (botões, links) */
+  --brand-accent-2: #22d3ee;   /* ciano de destaque (gradientes, "ser vista") */
+  --brand-border: #132842;     /* linhas divisórias */
+
+  /* Tokens do design system mapeados para a paleta */
+  --background: var(--brand-bg);
+  --foreground: var(--brand-text);
+  --card: var(--brand-elevated);
+  --card-foreground: var(--brand-text);
+  --popover: var(--brand-elevated);
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-accent);
+  --primary-foreground: var(--brand-bg);
+  --secondary: var(--brand-surface);
+  --secondary-foreground: var(--brand-text);
+  --muted: var(--brand-surface);
+  --muted-foreground: var(--brand-text-muted);
+  --accent: var(--brand-accent-2);
+  --accent-foreground: var(--brand-bg);
+  --destructive: var(--brand-accent-2);
+  --border: var(--brand-border);
+  --input: var(--brand-border);
+  --ring: var(--brand-accent-2);
+  --chart-1: var(--brand-accent);
+  --chart-2: var(--brand-accent-2);
+  --chart-3: var(--brand-text-muted);
+  --chart-4: var(--brand-surface);
+  --chart-5: var(--brand-bg);
   --radius: 0.625rem;
-  --sidebar: #071426;
-  --sidebar-foreground: #F8FAFC;
-  --sidebar-primary: #0EA5E9;
-  --sidebar-primary-foreground: #030712;
-  --sidebar-accent: #071426;
-  --sidebar-accent-foreground: #22D3EE;
-  --sidebar-border: #94A3B8;
-  --sidebar-ring: #22D3EE;
+  --sidebar: var(--brand-surface);
+  --sidebar-foreground: var(--brand-text);
+  --sidebar-primary: var(--brand-accent);
+  --sidebar-primary-foreground: var(--brand-bg);
+  --sidebar-accent: var(--brand-surface);
+  --sidebar-accent-foreground: var(--brand-accent-2);
+  --sidebar-border: var(--brand-border);
+  --sidebar-ring: var(--brand-accent-2);
 }
 
-.dark {
-  color-scheme: dark;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    color-scheme: dark;
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
-  }
-}
+/* Site de tema único: a paleta da marca em :root vale para light e dark do SO.
+   Os blocos .dark / @media (prefers-color-scheme: dark) que traziam o tema
+   cinza padrão do shadcn foram removidos para não sobrescrever a paleta. */
 
 @layer base {
   * {

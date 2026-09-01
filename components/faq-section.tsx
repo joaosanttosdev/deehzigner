@@ -19,15 +19,15 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="duvidas" className="relative overflow-hidden border-t border-white/10 bg-[#071426] px-6 py-24 md:px-10 lg:px-16">
+    <section id="duvidas" className="relative overflow-hidden border-t border-border bg-secondary px-6 py-24 md:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-[#22D3EE]">FAQ / respostas rápidas</p>
-            <h2 className="text-4xl font-semibold tracking-tight text-[#F8FAFC] md:text-6xl">Ainda tem dúvidas?</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-[#94A3B8]">Tudo o que você precisa saber antes de começar a transformar sua ideia em uma marca.</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-accent">FAQ / respostas rápidas</p>
+            <h2 className="text-4xl font-semibold tracking-tight text-foreground md:text-6xl">Ainda tem dúvidas?</h2>
+            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">Tudo o que você precisa saber antes de começar a transformar sua ideia em uma marca.</p>
           </div>
-          <Button asChild className="w-fit rounded-full bg-[#0EA5E9] px-6 text-[#030712] hover:bg-[#22D3EE]">
+          <Button asChild className="w-fit rounded-full bg-primary px-6 text-primary-foreground hover:bg-accent">
             <a href="https://wa.me/" target="_blank" rel="noreferrer">Vamos conversar <ArrowUpRight data-icon="inline-end" /></a>
           </Button>
         </div>
