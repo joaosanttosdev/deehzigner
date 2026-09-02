@@ -19,6 +19,41 @@
   to { height: 0; }
 }
 
+/* Carrossel infinito das imagens de fundo do hero.
+   Cada trilho tem o conteúdo duplicado, então -50% = um ciclo perfeito. */
+@keyframes hero-carousel {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes hero-carousel-reverse {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.hero-carousel-track {
+  animation: hero-carousel 60s linear infinite;
+  will-change: transform;
+}
+
+.hero-carousel-track-reverse {
+  animation: hero-carousel-reverse 60s linear infinite;
+  will-change: transform;
+}
+
+/* Pausa o carrossel ao passar o mouse por cima */
+.hero-carousel:hover .hero-carousel-track,
+.hero-carousel:hover .hero-carousel-track-reverse {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-track,
+  .hero-carousel-track-reverse {
+    animation: none;
+  }
+}
+
 @theme inline {
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);

@@ -59,11 +59,49 @@ const testimonials = [
     name: "Hassan Ali",
     role: "Gestor de e-commerce",
   },
+  {
+    text: "Contratar a Deeh Zigner foi a melhor decisão para a marca. Profissionalismo do briefing à entrega final.",
+    image: "https://randomuser.me/api/portraits/women/10.jpg",
+    name: "Marina Costa",
+    role: "Fundadora",
+  },
+  {
+    text: "O material ficou coeso em todos os canais. Impressão, redes sociais e site falando exatamente a mesma língua.",
+    image: "https://randomuser.me/api/portraits/men/11.jpg",
+    name: "Ricardo Alves",
+    role: "Sócio-diretor",
+  },
+  {
+    text: "Rápido, atencioso e muito criativo. A nova identidade elevou a percepção da empresa no mercado.",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    name: "Patrícia Nunes",
+    role: "Head de Marketing",
+  },
+  {
+    text: "Cada detalhe foi pensado com cuidado. O resultado passou muito mais credibilidade para os nossos clientes.",
+    image: "https://randomuser.me/api/portraits/men/13.jpg",
+    name: "Diego Fernandes",
+    role: "Empreendedor",
+  },
+  {
+    text: "Trabalho impecável. As peças aumentaram nosso engajamento já nas primeiras semanas de uso.",
+    image: "https://randomuser.me/api/portraits/women/14.jpg",
+    name: "Camila Rocha",
+    role: "Gestora de conteúdo",
+  },
+  {
+    text: "Recomendo sem pensar duas vezes. Entendeu o negócio a fundo e traduziu tudo isso em design.",
+    image: "https://randomuser.me/api/portraits/men/15.jpg",
+    name: "Bruno Teixeira",
+    role: "Diretor comercial",
+  },
 ]
 
 const firstColumn = testimonials.slice(0, 3)
 const secondColumn = testimonials.slice(3, 6)
 const thirdColumn = testimonials.slice(6, 9)
+const fourthColumn = testimonials.slice(9, 12)
+const fifthColumn = testimonials.slice(12, 15)
 
 export function TestimonialsSection() {
   return (
@@ -82,12 +120,14 @@ export function TestimonialsSection() {
             Cada projeto é uma parceria. Veja o que clientes dizem sobre transformar ideias em marcas com propósito.
           </p>
         </motion.div>
+      </div>
 
-        <div className="mt-12 flex max-h-[740px] justify-center gap-6 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] md:mt-16">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
-        </div>
+      <div className="relative z-10 mt-12 flex max-h-[740px] justify-center gap-6 overflow-hidden px-5 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_82%,transparent)] md:mt-16">
+        <TestimonialsColumn testimonials={firstColumn} duration={15} />
+        <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
+        <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+        <TestimonialsColumn testimonials={fourthColumn} className="hidden xl:block" duration={21} />
+        <TestimonialsColumn testimonials={fifthColumn} className="hidden 2xl:block" duration={16} />
       </div>
     </section>
   )

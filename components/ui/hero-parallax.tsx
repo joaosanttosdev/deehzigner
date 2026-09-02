@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { motion, MotionValue, useScroll, useSpring, useTransform } from "framer-motion"
+import { motion, useScroll, useSpring, useTransform } from "framer-motion"
 import Link from "next/link"
 
 type Product = { title: string; link: string; thumbnail: string }
@@ -18,8 +18,6 @@ export function HeroParallax({ products }: { products: Product[] }) {
   const ref = React.useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
   const spring = { stiffness: 300, damping: 30, bounce: 100 }
-  const translateX = useSpring(useTransform(scrollYProgress, [0, 1], [0, 1000]), spring)
-  const translateXReverse = useSpring(useTransform(scrollYProgress, [0, 1], [0, -1000]), spring)
   const rotateX = useSpring(useTransform(scrollYProgress, [0, 0.2], [15, 0]), spring)
   const rotateZ = useSpring(useTransform(scrollYProgress, [0, 0.2], [20, 0]), spring)
   const translateY = useSpring(useTransform(scrollYProgress, [0, 0.2], [-700, 500]), spring)
@@ -40,20 +38,29 @@ export function HeroParallax({ products }: { products: Product[] }) {
           ))}
         </div>
       </header>
-      <motion.div style={{ rotateX, rotateZ, translateY, opacity }} className="flex flex-col gap-12 md:gap-20">
+      <motion.div
+        style={{ rotateX, rotateZ, translateY, opacity }}
+        className="hero-carousel group flex flex-col gap-12 md:gap-20"
+      >
         {rows.map((row, index) => (
-          <motion.div key={index} className={`flex gap-6 md:gap-20 ${index % 2 === 0 ? "flex-row-reverse" : "flex-row"}`}>
-            {row.map((product) => <ProductCard key={product.title} product={product} translate={index % 2 === 0 ? translateX : translateXReverse} />)}
-          </motion.div>
+          <div
+            key={index}
+            className={`flex w-max gap-6 md:gap-20 ${index % 2 === 0 ? "hero-carousel-track" : "hero-carousel-track-reverse"}`}
+            style={{ animationDuration: `${55 + index * 12}s` }}
+          >
+            {[...row, ...row].map((product, i) => (
+              <ProductCard key={`${product.title}-${i}`} product={product} />
+            ))}
+          </div>
         ))}
       </motion.div>
     </section>
   )
 }
 
-function ProductCard({ product, translate }: { product: Product; translate: MotionValue<number> }) {
+function ProductCard({ product }: { product: Product }) {
   return (
-    <motion.article style={{ x: translate }} whileHover={{ y: -20 }} className="group/product relative h-72 w-[22rem] shrink-0 overflow-hidden rounded-2xl border border-border bg-muted shadow-xl md:h-96 md:w-[30rem]">
+    <motion.article whileHover={{ y: -20 }} className="group/product relative h-72 w-[22rem] shrink-0 overflow-hidden rounded-2xl border border-border bg-muted shadow-xl md:h-96 md:w-[30rem]">
       <Link href={product.link} target="_blank" rel="noreferrer" className="block h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <img src={product.thumbnail} alt={product.title} className="absolute inset-0 h-full w-full object-cover object-left-top" loading="lazy" />
         <div className="absolute inset-0 bg-black/0 transition-colors group-hover/product:bg-black/70" />
