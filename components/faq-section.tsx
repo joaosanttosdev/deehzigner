@@ -1,35 +1,75 @@
-"use client"
+"use client";
 
-import { ArrowUpRight } from "lucide-react"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqs = [
-  ["Quais serviços vocês oferecem?", "Trabalhamos com identidade visual, criação de logotipos, estampas, materiais gráficos, artes para redes sociais, cartões de visita, banners e outros projetos de comunicação visual. Também desenvolvemos projetos de web design."],
-  ["Como funciona o processo de criação?", "Começamos entendendo a necessidade do projeto, referências e objetivo. A partir disso, desenvolvemos a proposta visual, apresentamos o resultado e realizamos os ajustes necessários até chegar à solução ideal."],
-  ["Quanto custa um projeto de design?", "Cada projeto é único, então o valor depende do tipo de serviço, complexidade e quantidade de peças. Entre em contato para explicar o que você precisa e receber um orçamento personalizado."],
-  ["Vocês fazem artes para empresas e marcas?", "Sim. Desenvolvemos materiais para empresas, profissionais autônomos, lojas, eventos e projetos pessoais, sempre adaptando o design à identidade e ao público de cada cliente."],
-  ["Vocês criam estampas para camisetas?", "Sim. Criamos estampas personalizadas para camisetas, uniformes, eventos, marcas, equipes e projetos especiais."],
-  ["Posso enviar referências para o projeto?", "Sim. Referências são muito bem-vindas. Elas ajudam a entender o estilo, a direção visual e as expectativas para o projeto."],
-  ["Quantas alterações posso solicitar?", "Isso depende do projeto contratado. O processo é alinhado previamente para que as etapas, entregas e possíveis ajustes fiquem claras desde o início."],
-  ["Quanto tempo leva para ficar pronto?", "O prazo varia de acordo com a complexidade e quantidade de materiais. Depois de entender o projeto, informamos uma estimativa de prazo antes de iniciar o trabalho."],
-  ["Como recebo os arquivos finais?", "Os arquivos são entregues nos formatos adequados para sua finalidade, seja impressão, redes sociais ou uso digital. Os formatos finais são definidos de acordo com o projeto contratado."],
-  ["Quero fazer um projeto. Como entro em contato?", "É simples. Clique em “Vamos conversar” e envie uma mensagem pelo WhatsApp contando um pouco sobre o que você precisa. A partir daí, conversamos sobre a ideia e os próximos passos."],
-]
+  [
+    "Quanto tempo demora para ficar pronto?",
+    "Depende do projeto: logotipos levam em média de 5 a 7 dias úteis, artes para redes sociais de 2 a 3 dias e identidades visuais completas de 10 a 15 dias, sempre com prazos combinados no início.",
+  ],
+  [
+    "Como funciona o pagamento via PIX em duas etapas?",
+    "50% do valor é pago no início, para reservar a agenda e começar a criação, e os 50% restantes na aprovação final, antes da entrega dos arquivos definitivos.",
+  ],
+  [
+    "Posso parcelar no cartão?",
+    "Sim! Projetos podem ser parcelados no cartão de crédito. As condições de parcelamento são combinadas no fechamento do orçamento.",
+  ],
+  [
+    "Você trabalha com qualquer segmento?",
+    "Sim, atendo negócios de todos os segmentos — do comércio local a startups. Cada projeto começa com um briefing para entender a fundo o seu mercado e o seu público.",
+  ],
+  [
+    "Os arquivos são meus após a entrega?",
+    "Sim. Após a aprovação e o pagamento final, todos os arquivos e direitos de uso da arte são seus, incluindo os formatos editáveis quando contratados.",
+  ],
+  [
+    "Como envio minhas referências e materiais?",
+    "Pelo WhatsApp ou e-mail: você pode mandar logotipos existentes, fotos, textos e exemplos de estilos que gosta. Tudo é organizado no briefing do projeto.",
+  ],
+  [
+    "E se eu não gostar do resultado?",
+    "Cada projeto inclui rodadas de ajustes para chegar ao resultado ideal. Trabalho com revisões até que a proposta esteja alinhada ao briefing aprovado.",
+  ],
+  [
+    "Qual o prazo de feedback para manter o projeto fluindo?",
+    "O ideal é retornar em até 2 dias úteis a cada apresentação. Assim o cronograma combinado é mantido e o projeto não perde o ritmo.",
+  ],
+  [
+    "O que acontece se eu mudar o briefing durante o projeto?",
+    "Pequenos ajustes fazem parte do processo. Mudanças significativas de direção são tratadas como novo escopo, com prazo e valores reavaliados em conjunto.",
+  ],
+  [
+    "Quais arquivos recebo na entrega?",
+    "Você recebe os arquivos finais em alta resolução (PNG, JPG e PDF) e, conforme o pacote, os editáveis (AI, PSD ou CDR), além do manual de aplicação da marca.",
+  ],
+];
 
 export function FAQSection() {
   return (
-    <section id="duvidas" className="relative overflow-hidden border-t border-border bg-secondary px-6 py-24 md:px-10 lg:px-16">
+    <section
+      id="duvidas"
+      className="relative overflow-hidden border-t border-border bg-secondary px-5 py-24 md:px-20"
+    >
       <div className="mx-auto max-w-6xl">
         <div className="mb-14 flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.28em] text-accent">FAQ / respostas rápidas</p>
-            <h2 className="text-4xl font-semibold tracking-tight text-foreground md:text-6xl">Ainda tem dúvidas?</h2>
-            <p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">Tudo o que você precisa saber antes de começar a transformar sua ideia em uma marca.</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.28em] text-accent">
+              FAQ / respostas rápidas
+            </p>
+            <h2 className="text-5xl font-semibold tracking-tight text-foreground md:text-7xl">
+              Ainda tem dúvidas?
+            </h2>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground">
+              Tudo o que você precisa saber antes de começar a transformar sua
+              ideia em uma marca.
+            </p>
           </div>
-          <Button asChild className="w-fit rounded-full bg-primary px-6 text-primary-foreground hover:bg-accent">
-            <a href="https://wa.me/" target="_blank" rel="noreferrer">Vamos conversar <ArrowUpRight data-icon="inline-end" /></a>
-          </Button>
         </div>
         <div className="grid gap-x-12 md:grid-cols-2">
           {[faqs.slice(0, 5), faqs.slice(5)].map((column, columnIndex) => (
@@ -45,5 +85,5 @@ export function FAQSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

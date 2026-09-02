@@ -68,7 +68,7 @@ const thirdColumn = testimonials.slice(6, 9)
 export function TestimonialsSection() {
   return (
     <section id="testemunhas" className="relative my-20 overflow-hidden bg-background py-16 md:my-28 md:py-24">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,9 +76,9 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="mx-auto flex max-w-2xl flex-col items-center justify-center text-center"
         >
-          <span className="rounded-lg border border-border px-4 py-1 text-sm text-primary">Testemunhas</span>
-          <h2 className="mt-5 text-4xl font-bold tracking-tight text-foreground md:text-6xl">Marcas que confiaram</h2>
-          <p className="mt-5 text-base leading-7 text-muted-foreground md:text-lg">
+          <span className="rounded-lg border border-border px-4 py-1 text-base text-primary">Testemunhas</span>
+          <h2 className="mt-5 text-5xl font-bold tracking-tight text-foreground md:text-7xl">Marcas que confiaram</h2>
+          <p className="mt-5 text-lg leading-8 text-muted-foreground md:text-xl">
             Cada projeto é uma parceria. Veja o que clientes dizem sobre transformar ideias em marcas com propósito.
           </p>
         </motion.div>

@@ -68,7 +68,7 @@
   --brand-surface: #071426;    /* fundo das seções alternadas (Sobre, Dúvidas) */
   --brand-elevated: #0c1e38;   /* fundo dos cards (depoimentos, campos do formulário) */
   --brand-text: #f8fafc;       /* cor do texto principal (branco) */
-  --brand-text-muted: #94a3b8; /* cor do texto secundário (cinza-azulado) */
+  --brand-text-muted: #f1f5f9; /* texto secundário agora em branco (acessibilidade) */
   --brand-accent: #0ea5e9;     /* azul de destaque (botões, links) */
   --brand-accent-2: #22d3ee;   /* ciano de destaque (gradientes, "ser vista") */
   --brand-border: #132842;     /* linhas divisórias */

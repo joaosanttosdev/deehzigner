@@ -27,15 +27,15 @@ export function HeroParallax({ products }: { products: Product[] }) {
 
   return (
     <section ref={ref} className="relative flex h-[300vh] flex-col overflow-hidden py-32 antialiased [perspective:1000px] [transform-style:preserve-3d]">
-      <header className="relative z-10 mx-auto w-full max-w-7xl px-6 py-16 md:py-28">
-        <p className="mb-5 text-sm font-medium uppercase tracking-[0.28em] text-primary">— Branding · UI/UX · Web Design</p>
-        <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-foreground md:text-7xl">Design que faz sua marca <span className="text-primary">ser vista.</span></h1>
-        <p className="mt-7 max-w-2xl text-base leading-7 text-muted-foreground md:text-xl">Identidade visual, estampas e materiais gráficos para marcas que querem ser lembradas. Cada logotipo ao fundo é um trabalho real — a vitrine de 12 anos de experiência do Anderson.</p>
+      <header className="relative z-10 mx-auto w-full max-w-7xl px-5 py-16 md:px-20 md:py-28">
+        <p className="mb-5 text-base font-medium uppercase tracking-[0.28em] text-primary">— Branding · UI/UX · Web Design</p>
+        <h1 className="max-w-5xl text-6xl font-bold leading-[1.05] tracking-tight text-foreground md:text-8xl">Design que faz sua marca <span className="text-primary">ser vista.</span></h1>
+        <p className="mt-7 max-w-2xl text-lg leading-8 text-muted-foreground md:text-2xl">Identidade visual, estampas e materiais gráficos para marcas que querem ser lembradas. Cada logotipo ao fundo é um trabalho real — a vitrine de 12 anos de experiência do Anderson.</p>
         <div className="mt-10 grid max-w-2xl grid-cols-2 gap-6 border-t border-border pt-8 lg:grid-cols-4">
           {stats.map((item) => (
             <div key={item.label}>
-              <p className="text-2xl font-bold text-primary md:text-3xl">{item.value}</p>
-              <p className="mt-1.5 text-sm leading-5 text-muted-foreground">{item.label}</p>
+              <p className="text-3xl font-bold text-primary md:text-4xl">{item.value}</p>
+              <p className="mt-1.5 text-base leading-6 text-muted-foreground">{item.label}</p>
             </div>
           ))}
         </div>
@@ -57,7 +57,7 @@ function ProductCard({ product, translate }: { product: Product; translate: Moti
       <Link href={product.link} target="_blank" rel="noreferrer" className="block h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
         <img src={product.thumbnail} alt={product.title} className="absolute inset-0 h-full w-full object-cover object-left-top" loading="lazy" />
         <div className="absolute inset-0 bg-black/0 transition-colors group-hover/product:bg-black/70" />
-        <h2 className="absolute bottom-5 left-5 translate-y-2 text-lg font-medium text-white opacity-0 transition-all group-hover/product:translate-y-0 group-hover/product:opacity-100">{product.title}</h2>
+        <h2 className="absolute bottom-5 left-5 translate-y-2 text-xl font-medium text-white opacity-0 transition-all group-hover/product:translate-y-0 group-hover/product:opacity-100">{product.title}</h2>
       </Link>
     </motion.article>
   )

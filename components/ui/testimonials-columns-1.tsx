@@ -32,12 +32,12 @@ export function TestimonialsColumn({
               className="w-full max-w-xs rounded-3xl border border-border bg-card p-7 shadow-lg shadow-primary/10 md:p-10"
               key={`${index}-${testimonialIndex}`}
             >
-              <p className="text-sm leading-7 text-foreground md:text-base">{text}</p>
+              <p className="text-base leading-7 text-foreground md:text-lg">{text}</p>
               <div className="mt-5 flex items-center gap-3">
                 <img width={40} height={40} src={image} alt={name} className="size-10 rounded-full object-cover" loading="lazy" />
                 <div className="flex flex-col">
-                  <p className="text-sm font-medium leading-5 tracking-tight text-foreground">{name}</p>
-                  <p className="text-sm leading-5 tracking-tight text-muted-foreground">{role}</p>
+                  <p className="text-base font-medium leading-6 tracking-tight text-foreground">{name}</p>
+                  <p className="text-base leading-6 tracking-tight text-muted-foreground">{role}</p>
                 </div>
               </div>
             </article>
